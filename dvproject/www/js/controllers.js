@@ -19,9 +19,11 @@ angular.module('starter.controllers', [])
 })
 
 .controller('CreateCtrl', function($scope, Task) {
-        $scope.add = function(x){
+    $scope.add = function(x){
         Task.addTask(x);
     };
+    
+    $scope.items = Task.data.tasks;
 })
 
 .controller('HowToCtrl', function($scope) {
