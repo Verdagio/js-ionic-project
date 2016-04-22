@@ -12,7 +12,6 @@ angular.module('starter.controllers', [])
 
     $scope.items = Task.data.tasks;
     $scope.show;
-    
 
 })
 
@@ -21,8 +20,12 @@ angular.module('starter.controllers', [])
                     details: ""};
     $scope.addTask = function(){
         Task.addTask($scope.data.title, $scope.data.details);
+        // Set the text boxes to blank once clicked
+        $scope.data.title = "";
+        $scope.data.details = "";
     };
     
-    $scope.items = Task.data.tasks;
+    
+
 })
 
