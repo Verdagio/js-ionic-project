@@ -2,13 +2,11 @@ angular.module('starter.controllers', [])
 
 .controller('TodoCtrl', function($scope, Task) {
     
-    $scope.info = "";
+    $scope.data = "";
     
     $scope.remove = function(x){
       Task.remove(x);
-        if($scope.items.length == 0){
-            $scope.info = "No Tasks left!"; 
-        }
+
     };
     
 
@@ -18,14 +16,13 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('CreateCtrl', function($scope, Task) {
-    $scope.add = function(x){
-        Task.addTask(x);
+.controller('CreateCtrl', function($scope, Task) {    
+    $scope.data = { title: "", 
+                    details: ""};
+    $scope.addTask = function(){
+        Task.addTask($scope.data.title, $scope.data.details);
     };
     
     $scope.items = Task.data.tasks;
 })
 
-.controller('HowToCtrl', function($scope) {
-
-});

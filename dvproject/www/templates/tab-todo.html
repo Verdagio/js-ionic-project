@@ -6,8 +6,8 @@
           Delete
         </ion-option-button>
 <div class="card">
-<div class="item item-divider">{{item.title}}</div>
-    <div class="item item-text-wrap">{{item.details}}
+<div class="item item-divider">  {{item.title}}</div>
+    <div class="item item-text-wrap"><ion-checkbox ng-model="filter.blue">{{item.details}}</ion-checkbox>
 </div>
 <div class="item item-divider">
 {{item.added|date:"dd.MM.yy"}}
